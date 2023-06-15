@@ -44,7 +44,7 @@ public class EmployeeController {
 		//get the course by particular id
 		@GetMapping("/employees/{employee_id}")
 		public  Employee getEmployee(@PathVariable String employee_id) {
-			return this.employees.getEmployee(Long.parseLong(employee_id));
+			return this.employees.getEmployee((Long.parseLong(employee_id)));
 		}
 		
 		//post the course
@@ -65,7 +65,7 @@ public class EmployeeController {
 		@DeleteMapping("/employees/{employee_id}")
 		public ResponseEntity<HttpStatus>deleteEmployee(@PathVariable String employee_id){
 			try {
-				this.employees.deleteEmployee(Long.parseLong(employee_id));
+				this.employees.deleteEmployee((Long.parseLong(employee_id)));
 			
 		return new ResponseEntity<>(HttpStatus.OK);
 	    }catch (Exception e) {

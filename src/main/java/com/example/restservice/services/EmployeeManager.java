@@ -12,7 +12,7 @@ import com.example.restservice.entities.Employee;
 
 @Service
 public class EmployeeManager implements Employees {
-	
+
 	List<Employee>list;
 public EmployeeManager() {
 		
@@ -30,7 +30,7 @@ public EmployeeManager() {
 	
 	
 	@Override
-	public Employee getEmployee(long employee_id) {
+	public Employee getEmployee(Long employee_id) {
 		Employee c=null;
 		for(Employee employee:list)
 		{
@@ -70,7 +70,7 @@ public EmployeeManager() {
 	}
 
 	@Override
-	public Employee deleteEmployee(long parseLong) {
+	public Employee deleteEmployee(Long parseLong) {
 		list=this.list.stream().filter(e->e.getEmployee_id()!=parseLong).collect(Collectors.toList());
 		return null;
 		
